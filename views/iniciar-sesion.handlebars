@@ -1,0 +1,23 @@
+<main class="contenedor">
+    <form action="/auth/singin" method='POST' class="default-form">
+        <div class="campo">
+            <label>Email</label>
+            <input type="email" name="email" placeholder='Tu e-mail' required>
+        </div>
+        <div class="campo">
+            <label>Contrasena</label>
+            <input type="password" name="password" placeholder='Tu contrasena' required>
+        </div>
+
+        <div class="campo acciones">
+            <a href='/auth/singup'>Crear una cuenta</a>
+            <a href='/auth/restablecer-password'>Olvidaste tu contrasena?</a>
+
+        </div>
+        
+        <div class="campo">
+            <input type="submit" value="Iniciar sesion" class='btn btn-azul'>
+        </div>
+
+    </form>
+</main>
