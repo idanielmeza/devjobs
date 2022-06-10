@@ -135,6 +135,21 @@ const mostrarCandidatos = async(req,res,next)=>{
     });
 
 }
+
+const buscarVacantes = async(req,res,next)=>{
+    const vacantes = await Vacante.find({
+        $text: {$search: req.query.q}
+    });
+
+    //Mostrar las vacantes
+    res.render('home',{
+        nombrePagina:  `Resultados para la busqueda : ${req.body.q}`,
+        barra: true,
+        vacantes
+    })
+
+}
+
 module.exports ={
     formularioNuevaVacante,
     agregarVacante,
@@ -143,5 +158,6 @@ module.exports ={
     editarVacante,
     eliminarVacante,
     contactar,
-    mostrarCandidatos
+    mostrarCandidatos,
+    buscarVacantes
 }

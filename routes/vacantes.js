@@ -1,5 +1,5 @@
 const {Router} = require('express');
-const {formularioNuevaVacante, agregarVacante,mostrarVacante, formEditarVacante, editarVacante, eliminarVacante, contactar, mostrarCandidatos} = require('../controllers/vacantesController');
+const {formularioNuevaVacante, agregarVacante,mostrarVacante, formEditarVacante, editarVacante, eliminarVacante, contactar, mostrarCandidatos, buscarVacantes} = require('../controllers/vacantesController');
 const {autenticado} = require('../middlewares/autenticado');
 const {check} = require('express-validator');
 const {validarVacantes} = require('../middlewares/validarCampos');
@@ -57,5 +57,8 @@ router.delete('/eliminar/:id',[
 router.get('/candidatos/:id',[
     autenticado
 ],mostrarCandidatos);
+
+//buscador
+router.post('/buscador', buscarVacantes)
 
 module.exports = router;

@@ -55,5 +55,8 @@ vacanteSchema.pre('save', function(next){
     next();
 })
 
+//Crear un indice
+vacanteSchema.index({titulo: 'text'});
+
 
 module.exports = model('Vacante', vacanteSchema);
